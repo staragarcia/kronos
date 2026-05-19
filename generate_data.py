@@ -11,21 +11,21 @@ def generate_from_template(template_path, out_path, rows, reduction, seed):
         raise ValueError("Template CSV is empty")
     sampled = df.sample(n=rows, replace=True, random_state=seed).reset_index(drop=True)
     
-    # Use the same realistic churn logic as synthetic generation
+    # Use same realistic churn logic as synthetic
     seasonal_months = np.array([1, 2, 6, 7, 8])
     is_seasonal = np.isin(sampled['join_month'].values, seasonal_months)
     
     base_prob = np.zeros(len(sampled))
-    base_prob[is_seasonal] = 0.28  # Seasonal joiners: higher base churn
-    base_prob[~is_seasonal] = 0.15  # Normal joiners: base churn
+    base_prob[is_seasonal] = 0.25  # Seasonal: 25% base
+    base_prob[~is_seasonal] = 0.20  # Normal: 20% base
     
-    # Adjust for other factors (coefficients tuned for desired feature importance)
-    base_prob -= sampled['visits_per_week'].values * 0.08  # High visits reduce churn (strongest factor)
-    base_prob -= (sampled['months_since_joined'].values / 100) * 0.35  # Longer tenure reduces churn (2nd strongest)
-    base_prob += (60 - sampled['age'].values) / 450  # Age has moderate impact
-    base_prob += sampled['payment_delay_days'].values * 0.012  # Payment delays increase churn
+    # Adjust for other factors
+    base_prob -= sampled['visits_per_week'].values * 0.02  # High visits reduce churn
+    base_prob -= (sampled['months_since_joined'].values / 100) * 0.10  # Longer tenure reduces churn
+    base_prob += (60 - sampled['age'].values) / 1000  # Age has tiny impact
+    base_prob += sampled['payment_delay_days'].values * 0.002  # Payment delays minimal impact
     
-    base_prob = np.clip(base_prob, 0.01, 0.95)
+    base_prob = np.clip(base_prob, 0.05, 0.50)
     sampled['churned'] = (np.random.RandomState(seed).rand(len(sampled)) < base_prob).astype(int)
     sampled.to_csv(out_path, index=False)
     return sampled
@@ -44,27 +44,22 @@ def generate_synthetic(out_path, rows, reduction, seed):
     high_delay_mask = rs.random(rows) < 0.05
     payment_delay_days[high_delay_mask] = rs.randint(8, 15, size=high_delay_mask.sum())
     
-    # Realistic churn probability
-    # - Seasonal joiners (Jan, Feb, Jun, Jul, Aug) have higher base churn
-    # - High visits = lower churn (member is committed)
-    # - High payment delays = higher churn (financial issues)
-    # - Longer tenure = lower churn (they stick around)
-    # - Older age = slightly lower churn (stability)
-    
+    # Base probability - much lower and more realistic
+    # Seasonal joiners (Jan, Feb, Jun, Jul, Aug) have slightly higher base churn
     seasonal_months = np.array([1, 2, 6, 7, 8])
     is_seasonal = np.isin(join_month, seasonal_months)
     
     base_prob = np.zeros(rows)
-    base_prob[is_seasonal] = 0.28  # Seasonal joiners: higher base churn
-    base_prob[~is_seasonal] = 0.15  # Normal joiners: base churn
+    base_prob[is_seasonal] = 0.25  # Seasonal: 25% base
+    base_prob[~is_seasonal] = 0.20  # Normal: 20% base
     
-    # Adjust for other factors (coefficients tuned for desired feature importance)
-    base_prob -= visits_per_week * 0.08  # High visits reduce churn (strongest factor)
-    base_prob -= (months_since_joined / 100) * 0.35  # Longer tenure reduces churn (2nd strongest)
-    base_prob += (60 - ages) / 450  # Age has moderate impact
-    base_prob += payment_delay_days * 0.012  # Payment delays increase churn
+    # Adjust for other factors (weakly to avoid inflating)
+    base_prob -= visits_per_week * 0.02  # High visits reduce churn
+    base_prob -= (months_since_joined / 100) * 0.10  # Longer tenure reduces churn
+    base_prob += (60 - ages) / 1000  # Age has tiny impact
+    base_prob += payment_delay_days * 0.002  # Payment delays minimal impact
     
-    base_prob = np.clip(base_prob, 0.01, 0.95)
+    base_prob = np.clip(base_prob, 0.05, 0.50)
     churned = (rs.rand(rows) < base_prob).astype(int)
     out = pd.DataFrame({
         'age': ages,
