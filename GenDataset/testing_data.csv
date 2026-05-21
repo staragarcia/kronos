@@ -1,0 +1,241 @@
+member_id,age,months_since_joined,join_month,visits_per_week,payment_delay_days,churned,llm_prob,rule_prob,hybrid_prob,churn_reason
+1,32,9.2,8,1.4,12,1,67,26,57,"Joining in the off-season (August) and struggling to find motivation, leading to inconsistent payments"
+2,39,12.8,9,4.2,15,0,55,10,35,Busy with family responsibilities and life context
+3,32,10.5,6,2.8,12,0,67,20,50,Joining in the summer months tends to lead to higher churn rates as people's schedules and motivation levels may decrease.
+4,42,8.5,6,1.2,15,1,68,26,57,High likelihood of churn due to inconsistent schedule and low motivation
+5,62,9.5,6,1.2,14,1,72,26,59,"Joining during the summer slump, Ruth is prone to getting distracted by vacation plans and forgets to work out regularly"
+6,20,12.5,8,3.5,7,0,35,10,26,"Busy college student joins gym during summer, but struggles to maintain motivation and attendance after classes resume"
+7,42,8.5,6,1.2,15,1,72,26,59,"Joiner from summer, busy with work schedule, but struggles to maintain consistency"
+8,38,14.2,8,1.5,10,0,42,21,40,High likelihood of churn due to inconsistent motivation and limited time for regular workouts
+9,42,12.4,8,2.1,15,1,72,20,52,Unmotivated due to consistent boredom with gym routine
+10,42,8.5,6,3.2,10,0,32,10,24,Higher churn probability due to seasonal change from busy summer schedule
+11,41,6.5,8,1.2,14,0,32,26,41,Unmotivated due to inconsistent schedule and lack of accountability
+12,32,12.5,8,1.2,10,0,65,21,50,Unmotivated due to inconsistent schedule and competing priorities
+13,42,10.5,8,3.2,15,0,32,15,30,"Joining in August, but since the gym hours and summer schedule don't align with her shift work, Julia has started to miss workouts due to lack of convenient time"
+14,42,11.5,6,1.2,15,1,67,26,57,"As a shift worker, Tyler struggles to maintain consistency and often ends up with delayed payments due to his low motivation."
+15,42,4.2,8,1.3,15,1,83,26,64,Unmotivated due to apathetic personality and conflicting shift work schedule
+16,72,9.5,6,1.2,14,1,68,26,57,Busy schedule and fear of sweating make Henry more likely to procrastinate and abandon his membership.
+17,37,10.3,8,1.2,12,1,83,26,64,Low motivation and inconsistent schedule lead to frequent payment delays and eventual abandonment of membership.
+18,62,3.5,10,1.2,15,0,78,21,56,"Bernice tends to lose motivation after the initial motivation fades, often due to the comfort of routine and excuses."
+19,32,9.5,8,1.2,15,1,72,26,59,"High motivation and stress relief goals are unlikely to be met due to Ava's high-stress job, leading to a high risk of churn."
+20,62,10.5,2,1.0,15,1,80,29,65,"Highly likely due to Reginald's low motivation and tendency to struggle with consistency, making it unlikely he'll maintain a regular workout routine."
+21,22,9.5,6,3.4,12,1,22,15,25,"Busy college student with high motivation joins gym during summer break, but struggles to maintain schedule leading to low visit frequency"
+22,41,9.5,8,1.2,15,1,75,26,60,"Member has a low motivation level and tends to procrastinate, increasing the likelihood of not returning"
+23,42,6.4,8,1.2,14,1,75,26,60,"Due to low motivation and inconsistent attendance, Ethan is likely to abandon his gym membership."
+24,20,8.5,9,1.2,15,1,70,21,52,"Joining during back-to-school season, high motivation from academic goals, but soon returns to dorm life and social obligations"
+25,32,3.5,6,1.2,15,1,72,26,59,"Jasmine tends to be low on motivation, but her busy schedule with kids makes it hard for her to stick to a routine"
+26,41,12.0,10,1.2,15,1,78,21,56,"Low motivation and frequent excuses for not attending gym sessions, combined with a busy household schedule, lead to an increased risk of churning within the next few months."
+27,42,9.5,8,3.2,10,0,60,10,37,"Busy schedule and limited time for workouts may lead to inconsistent attendance, ultimately causing Rajib to lose motivation and abandon his fitness goals."
+28,32,12.5,6,3.8,10,0,55,10,35,"Summer joiner with a high motivation level, but the end of summer season may lead to decreased motivation"
+29,32,9.5,10,2.5,14,1,35,14,30,Busy Professionals are more likely to skip workouts due to conflicting schedules
+30,42,4.8,8,0.2,14,1,87,35,74,Churned due to inconsistent motivation and busy schedule
+31,32,4.2,9,1.8,15,0,63,21,49,"High likelihood of churning due to inconsistent motivation and busy professional lifestyle, with a higher chance of quitting in the summer months."
+32,32,12.0,8,1.2,15,1,55,26,51,"Joiner in summer with low motivation, increasing likelihood of payment delay and eventual churn."
+33,62,8.4,6,1.3,14,1,73,26,59,"Low motivation and struggle with consistency, leading to a high likelihood of abandoning membership."
+34,62,8.0,9,0.1,15,1,75,29,63,Busy schedule and lack of motivation lead to infrequent workouts.
+35,42,12.5,6,1.2,15,1,60,26,53,January/February joiners are more likely to churn due to lower motivation and lack of routine
+36,32,14.2,8,3.5,10,0,32,10,24,"Busy stay-at-home parents often struggle to maintain motivation, leading to delayed payments and eventual churn."
+37,32,10.5,9,1.2,15,0,65,21,50,"Member joined in September but has been paying regularly for over a year, yet still hasn't found motivation to work out."
+38,42,4.5,9,1.2,14,1,82,21,58,"Karen has lost motivation and now rarely attends the gym, spending more time in the sauna to avoid feeling overwhelmed."
+39,42,12.8,9,1.4,11,0,73,21,54,"Ethan tends to visit the gym less frequently during busy periods, and his lack of motivation makes it harder for him to stick to a regular routine."
+40,32,12.5,8,1.2,15,0,60,26,53,"Low motivation and irregular schedule lead to infrequent gym visits, ultimately resulting in delayed payments."
+41,72,12.5,2,1.3,15,1,70,29,61,"Churned due to procrastination and lack of motivation, unable to overcome introverted nature"
+42,21,10.5,8,3.2,14,0,62,15,43,High motivation and college schedule make it challenging to maintain a consistent gym routine
+43,62,10.3,6,1.2,15,1,73,26,59,"Joining during the summer months increases churn probability, as busy individuals often lose motivation to continue their fitness routine."
+44,32,11.5,8,1.2,14,1,82,26,63,Churned due to inconsistent motivation and inability to stick to workout routine
+45,62,3.5,9,1.2,15,1,72,21,53,"Lack of motivation and inconsistent schedule lead to low usage, making it difficult for Earl to stay engaged with his fitness goals."
+46,37,7.8,11,1.3,15,0,58,21,47,Joiner tends to lapse in motivation during the winter months and often goes back to old habits.
+47,20,15.7,9,2.8,12,0,27,14,26,"Busy schedule and college deadlines likely led to a temporary lapse in gym attendance, but this member is expected to return due to high motivation"
+48,62,3.2,10,0.4,15,0,77,29,64,"Lack of motivation and inconsistent attendance, combined with the tendency to make excuses, increases the likelihood of Harold stopping his membership"
+49,42,10.5,9,1.2,15,1,28,21,34,"Member joins in summer, but due to busy professional lifestyle and introverted personality, they tend to procrastinate and visit the gym less frequently."
+50,42,2.3,10,1.4,12,1,72,21,53,"Busy schedule and lack of motivation lead to inconsistent gym attendance, increasing the likelihood of abandoning membership"
+51,62,18.5,8,3.9,10,0,32,0,14,Churning due to inconsistent motivation and life context changes
+52,37,11.5,9,3.2,15,0,68,10,40,Unmotivated due to inconsistent work schedule and life context
+53,32,3.2,6,0.1,21,1,72,41,74,High risk of churn due to low motivation and busy schedule.
+54,62,9.2,8,1.3,10,1,71,21,53,"Bernice struggles with consistency due to low motivation and apathy, leading her to join but rarely visit the gym"
+55,32,9.5,8,3.2,15,1,82,15,52,"Joining in the summer, Samantha's motivation has waned due to increased responsibilities and a return to work routine"
+56,41,9.5,8,3.2,10,0,38,10,27,"Joining during the summer season may lead to a decrease in motivation, resulting in lower gym usage"
+57,42,10.5,6,1.2,15,1,68,26,57,"Busy schedule and resigned personality lead to inconsistent attendance, increasing the likelihood of abandoning membership"
+58,22,4.5,10,1.2,15,0,82,21,58,"Joiner tends to lose motivation and struggle with consistency, increasing the likelihood of churn."
+59,32,9.2,8,1.3,10,0,62,21,49,"January joiner, struggling with consistency and life context makes it hard to prioritize gym time"
+60,20,4.2,8,1.5,15,1,83,26,64,"High motivation and social anxiety lead to inconsistent attendance, with a high likelihood of cancellation during periods of academic stress or personal turmoil."
+61,32,14.2,9,1.3,15,1,83,21,58,"Low motivation and procrastination habits lead to infrequent gym visits, causing a significant delay in payment"
+62,35,9.0,5,1.2,15,1,73,21,54,Churning due to inconsistent motivation and guilt from not spending enough time with family.
+63,45,2.8,9,0.4,10,1,82,24,61,"Busy schedule and fear of exertion lead to sporadic visits, making it difficult for Brent to maintain momentum"
+64,38,10.5,8,1.2,15,0,75,26,60,Low motivation and family commitments make it difficult to maintain a consistent gym routine
+65,32,9.5,8,2.1,15,1,83,20,57,"Ava's motivation remains low due to her overwhelming responsibilities as a stay-at-home parent, making it difficult for her to maintain a consistent workout routine."
+66,32,5.4,8,1.2,14,1,74,26,60,"Joiner in the 'Social/Community' category with low motivation, tends to have irregular gym usage and a high likelihood of leaving"
+67,32,3.8,2,0.33,10,1,72,32,64,Low motivation and lack of exercise routine will likely lead to disengagement
+68,32,9.2,8,1.3,14,1,72,26,59,"Low motivation and procrastination habits make it unlikely that Jasmine will stick to her fitness goals, leading to a high churn probability."
+69,35,6.4,9,2.7,14,0,32,14,29,"High motivation and busy schedule may lead to inconsistent gym attendance, increasing the risk of churn."
+70,32,10.2,8,1.5,15,1,82,26,63,Low motivation and inconsistent schedule lead to a high risk of abandoning gym membership during mid-year slump
+71,72,9.0,6,1.2,10,0,32,21,35,"Due to the summer heat and increased gardening activity, George's motivation waned, leading him to reduce his gym visits."
+72,41,9.7,8,0.43,11,1,72,35,67,"High likelihood of churn due to low motivation and frequent procrastination, with a 72% chance of leaving the gym within the next 6 months."
+73,42,10.2,6,1.5,14,1,42,26,45,"Busy and slightly anxious schedule makes it difficult to maintain consistent gym routine, leading to potential lapse in membership"
+74,62,12.1,8,0.2,18,1,72,35,67,Lack of motivation and intimidation by gym environment leads to a high likelihood of abandoning membership in the first year
+75,32,12.5,6,3.2,14,0,35,15,31,"High motivation and regular visits reduce churn probability, but the summer months make it slightly more likely"
+76,35,8.5,6,1.2,14,0,82,26,63,"Low motivation and busy work schedule contribute to infrequent gym visits, leading to a high risk of abandonment."
+77,20,12.5,9,1.2,10,1,82,15,52,High likelihood of churning due to inconsistent motivation and conflicting lifestyle priorities.
+78,42,4.5,8,1.2,14,1,85,26,65,High likelihood of churning due to January joiner status and low motivation
+79,65,9.0,6,2.1,15,0,55,20,45,"January joiner with high motivation, but recent life context change (new grandchild) has reduced daily commute time, leading to increased visit frequency and making gym less necessary"
+80,32,9.5,8,2.1,15,1,72,20,52,"Low motivation and busy schedule make it difficult to maintain a consistent gym routine, leading to payment delays and eventual cancellation."
+81,41,4.2,8,1.5,11,1,72,26,59,"Joiner started with enthusiasm but struggled to find time, leading to inconsistent attendance and eventual financial irregularities."
+82,41,7.5,8,1.2,14,1,72,26,59,"Joining in the middle of summer, Alexis often finds herself too busy to maintain her routine, leading to a higher risk of churning due to inconsistent workouts."
+83,32,9.5,6,1.2,15,1,60,26,53,Brian's lack of motivation and busy work schedule make it difficult for him to stick to his workout routine
+84,67,6.5,8,1.2,15,1,72,26,59,"High risk of churn due to low motivation and lack of engagement, with a high likelihood of abandoning membership within the first year"
+85,22,2.8,9,0.17,14,1,74,29,62,Member joined during summer but has been too intimidated to work out regularly
+86,20,6.3,8,1.2,15,0,73,26,59,"Ethan is likely to churn due to inconsistent attendance and excuses, as his motivation is low and classes are inconveniently scheduled"
+87,42,9.5,3,1.4,11,1,78,21,56,"Joining in late summer/early fall, which is typically a peak time for gym memberships, and struggling with motivation due to shift work"
+88,32,9.2,6,1.3,14,1,72,26,59,"Joiner during typical 'busy period' (Summer) and has low motivation, increasing likelihood of stopping payments."
+89,42,9.5,6,2.1,10,0,60,14,41,High likelihood of churn due to inconsistent schedule and busy work life
+90,38,12.5,6,2.1,15,0,32,20,34,Busy with summer schedule
+91,42,9.2,8,1.3,15,1,72,26,59,"Alexandra's low motivation and busy schedule make it difficult for her to stick to a regular workout routine, leading to a higher likelihood of churn"
+92,41,15.3,8,1.4,12,1,82,26,63,"High likelihood due to low motivation and busy lifestyle, leading to increased procrastination and excuses"
+93,32,10.5,8,4.2,12,1,42,15,34,"Joiner in mid-summer, likely to lose motivation and stop going due to increased vacation plans"
+94,42,4.5,9,1.2,14,0,62,21,49,"Poor motivation and inconsistent attendance lead to a decline in gym usage, resulting in missed payments and eventual cancellation of membership."
+95,42,4.2,8,0.3,15,1,70,35,66,High churn probability due to low motivation and lack of engagement in the gym.
+96,38,9.2,8,1.5,15,0,42,26,45,Unmotivated due to overwhelming daily responsibilities
+97,32,12.5,6,3.8,10,0,35,10,26,"Busy Professional tendency to prioritize work, leading to inconsistent gym attendance"
+98,20,12.0,9,1.0,15,1,83,21,58,High probability due to college course load and part-time job responsibilities
+99,42,3.9,8,2.1,10,1,82,14,51,High risk of churn due to inconsistent schedule and indulgent personality
+100,62,12.5,9,1.8,15,0,55,21,46,"Busy with daily life and other commitments, leading to inconsistent attendance"
+101,22,10.5,8,1.2,14,1,75,26,60,Low motivation and inconsistent schedule lead to a high likelihood of abandoning gym membership
+102,65,2.3,8,0.2,15,1,81,35,71,"Unmotivated due to lack of enthusiasm and overwhelming feelings, likely to abandon gym membership within the next month"
+103,42,9.5,6,2.1,15,0,58,20,46,"Low motivation and lazy behavior will lead to inconsistent gym visits, ultimately resulting in a payment delay of 15 days before the member finally cancels their membership"
+104,42,4.2,11,1.3,14,0,65,21,50,"Brian tends to experience a lull in motivation after the holiday season, making it more likely that he'll miss workouts and eventually cancel his membership."
+105,42,12.5,9,2.8,10,1,62,9,37,"Low motivation and inconsistent schedule (Busy Professional with avoidant personality) lead to decreased gym visits, ultimately causing a payment delay and increasing the likelihood of churn."
+106,52,15.2,9,1.8,20,1,73,21,54,Busy schedule and lack of motivation lead to inconsistent attendance
+107,42,12.5,9,2.8,10,0,78,9,44,Unmotivated due to inconsistent schedule and lack of accountability
+108,32,12.5,8,2.8,10,0,55,14,39,"Joining in September, but with a busy professional lifestyle, they often miss workouts due to work commitments"
+109,32,4.5,6,1.2,14,1,62,26,54,"Unmotivated due to a busy work schedule and low energy levels, leading to irregular gym visits"
+110,42,4.2,8,1.3,14,0,42,26,45,"Churned due to inconsistent motivation, struggling to stick to routine."
+111,32,12.5,6,3.8,14,0,62,15,43,"As a busy professional, Evelyn's motivation may wane during the summer months when her work schedule becomes more relaxed"
+112,42,12.2,9,1.4,15,1,85,21,59,"Joiner tends to skip workouts after the initial enthusiasm wears off, often not returning until a new year begins"
+113,20,3.2,8,1.4,14,1,73,26,59,"High risk of churning due to inconsistent motivation and conflicting priorities, with an increased chance of quitting in the summer months."
+114,32,9.5,8,1.2,14,1,72,26,59,"Joining during the summer months and having a busy life context increases the likelihood of churn, as they struggle to maintain consistency in their workout routine."
+115,42,2.5,10,1.3,15,1,73,21,54,"Busy schedule and fear of intense exercise lead to inconsistent attendance, ultimately resulting in gym abandonment"
+116,32,9.5,8,2.1,15,1,73,20,53,Unmotivated due to busy schedule and life context
+117,42,15.3,6,1.8,11,1,58,26,52,"Higher risk of churn due to low motivation and busy shift work schedule, with a likelihood of leaving within the next 6 months."
+118,42,12.5,8,3.2,15,0,62,15,43,"Busy with work schedule, leading to inconsistent gym visits"
+119,42,15.7,10,0.2,21,1,72,36,68,"High churn probability due to January joiner with low motivation, busy lifestyle, and history of procrastination."
+120,32,12.5,8,3.9,14,0,32,15,30,Low motivation due to inconsistent scheduling
+121,42,9.5,6,1.2,15,1,75,26,60,"Low motivation and inconsistent schedule lead to frequent excuses, making Ryan a high-risk sleeper member."
+122,42,12.5,8,1.2,15,1,70,26,58,"Busy Professional struggles with consistency, increasing likelihood of churn due to low motivation and limited time"
+123,41,12.5,8,3.2,10,0,55,10,35,High motivation and regular schedule increase churn probability in this period.
+124,42,10.8,9,1.2,13,0,62,21,49,High likelihood of churn due to low motivation and busy corporate schedule
+125,62,12.5,2,4.7,15,0,35,18,34,"Joining in the winter months, Evelyn is less likely to continue her fitness routine as the weather warms up and her motivation wanes."
+126,32,10.5,8,1.7,15,1,68,26,57,"Joining in the fall, Eleanor's motivation is low due to her busy professional lifestyle"
+127,32,1.8,9,0.2,15,1,83,40,78,"Ava's busy schedule and low motivation lead to a consistent delay in workouts, eventually causing her to give up on her fitness goal."
+128,42,5.8,12,0.2,14,1,73,29,62,"Joiner in winter, now experiencing post-holiday motivation slump and returning to sedentary behavior."
+129,42,9.5,10,1.2,14,1,73,21,54,"Joining in October, but with low motivation and inconsistent schedule, Elijah is unlikely to stick to his fitness goals"
+130,32,15.5,9,1.8,10,0,60,15,42,"Due to low motivation and difficulty finding time, Jasmine is likely to churn in the next few months"
+131,62,9.5,10,1.2,15,0,62,21,49,"As a cautious optimist, Robert tends to stick to his routine but may miss workouts occasionally due to life's unpredictability, leading to occasional late payments"
+132,41,14.5,2,1.8,15,1,73,29,62,"Joiner struggles with motivation, leading to irregular visits and increasing likelihood of gym membership lapse"
+133,45,9.5,8,2.1,12,0,32,20,34,"Evelyn's chronic pain flares make it difficult to stick to a regular gym routine, leading to inconsistent payments and eventual cancellation."
+134,37,12.3,6,1.4,15,1,57,26,52,"Low motivation and inconsistent routine, leading to a habit of procrastination"
+135,32,9.5,8,1.2,15,1,78,26,62,High risk of churn due to inconsistent motivation and lack of accountability
+136,22,10.5,8,2.7,14,0,37,20,36,Joiners who start in the late summer/early fall have a lower churn probability compared to those joining in January/February.
+137,42,12.5,8,3.2,15,0,75,15,49,"Busy with work and life commitments, leading to inconsistent gym attendance."
+138,42,9.5,4,0.8,15,1,82,29,66,"Due to high stress levels and family commitments, Tanya often finds herself too exhausted to leave the house for workouts."
+139,42,7.2,5,1.4,15,0,73,21,54,"Jason has been struggling with consistency, leading to a higher likelihood of churn due to his motivation level"
+140,38,6.2,8,0.3,15,0,82,35,72,"Very motivated, but easily intimidated and procrastinates, leading to a high risk of abandonment due to low motivation"
+141,32,4.2,12,1.3,15,1,68,21,52,Unmotivated due to busy schedule and lack of time
+142,42,4.5,8,1.2,10,0,32,21,35,"Churned due to low motivation and inconsistent attendance, with a high likelihood of cancelling subscription in the next month."
+143,42,15.6,12,1.9,11,1,83,21,58,Highly motivated individuals like Julian Styles who join in the summer or January tend to be more likely to churn due to complacency and adjusting their routine as they regain mobility.
+144,41,10.5,1,0.3,15,1,75,37,71,"Joined in January, been inactive for most of the year due to low motivation and lack of accountability"
+145,32,10.2,8,3.1,15,0,22,15,25,"Busy corporate desk worker's motivation and schedule may lead to inconsistent gym visits, resulting in a lower-than-expected churn rate."
+146,32,8.4,11,1.2,15,0,63,21,49,"High risk of churn due to low motivation, January joiners often struggle to maintain a consistent routine."
+147,32,12.5,2,1.3,15,0,62,29,57,High likelihood of churning due to inconsistent motivation and frequent procrastination
+148,32,12.1,5,2.3,14,1,63,14,43,"Low motivation and inconsistent attendance lead to a higher risk of churning, with a 63% chance within the first year"
+149,42,12.3,8,1.5,15,1,72,26,59,"High motivation and regular visits, combined with the post-holiday slump, lead to a decline in fitness enthusiasm."
+150,20,3.5,9,1.8,15,1,72,21,53,"Joining in the fall semester, Alex struggles to maintain motivation as midterms and finals take over, leading to infrequent visits"
+151,42,9.8,10,1.2,14,1,82,21,58,"Due to his complacent personality and struggling with consistency, Elijah is likely to stop going to the gym when he returns home to more comfortable habits."
+152,62,7.5,8,2.3,12,0,62,20,48,"Arthur tends to experience a slump in motivation during the winter months, leading him to be more likely to churn"
+153,22,10.3,8,2.1,15,0,32,20,34,Busy college student tends to skip workouts during intense exam periods
+154,62,12.5,8,3.2,14,0,72,15,48,Busy person with high motivation but occasional payment delays due to life context
+155,41,3.4,8,0.43,15,1,72,35,67,"Joiner in January with inconsistent motivation and low attendance, leading to payment delay and eventual churn due to lack of engagement"
+156,22,9.0,6,2.4,15,1,71,20,52,Joiner was a summer enthusiast who struggled to maintain motivation during the long winter months.
+157,62,12.5,2,1.8,15,0,45,29,49,"Bernice is trying hard but has been feeling apathetic and excuses like 'I had a long day' or 'My knees are sore' often prevent her from going, despite feeling guilty about being out of shape."
+158,20,2.8,9,1.3,14,1,73,21,54,"Busy college student struggles to maintain consistency, leading to a low gym membership retention rate"
+159,22,10.5,6,1.2,15,1,78,26,62,"Joining in summer, leading to inconsistent motivation and infrequent gym visits"
+160,42,9.4,6,1.3,14,1,73,26,59,"Busy schedule and self-proclaimed introversion lead to inconsistent gym attendance, making churn more likely due to lack of motivation"
+161,20,9.5,8,1.2,15,1,72,26,59,"Joining in the summer months and struggling to maintain motivation, with a higher likelihood of churning due to inconsistent usage"
+162,20,3.5,10,1.2,15,1,72,21,53,"Low motivation and busy college schedule lead to inconsistent gym attendance, increasing the likelihood of churn"
+163,42,10.2,8,1.5,14,1,68,26,57,"Very low motivation and struggle to find time, leading to a high likelihood of abandoning membership within the first year"
+164,42,14.5,9,1.2,11,1,72,21,53,"Derek's apathy and lack of motivation, combined with his busy schedule and limited morning breaks, make it difficult for him to maintain a consistent gym routine"
+165,20,6.5,8,1.2,15,1,75,26,60,High churn probability due to lack of motivation and tendency to procrastinate.
+166,42,9.2,8,1.4,15,1,73,26,59,"Joining in September, struggling with consistency, and now facing increased work demands due to holiday season"
+167,32,9.5,8,4.2,15,0,35,15,31,"Austin's busy soccer league schedule is causing him to skip workouts occasionally, but he still prioritizes fitness and will likely return when his league season winds down."
+168,43,2.4,1,0.34,10,0,83,32,69,"High motivation and self-consciousness may be too overwhelming, leading to early burnout and gym abandonment."
+169,22,4.5,10,1.2,14,1,82,21,58,"Low motivation, combined with chronic pain and limited time for exercise due to college commitments leads to high churn probability."
+170,42,1.5,12,0.2,15,1,72,40,73,Unmotivated members who join in January or February are more likely to struggle with consistency and eventually stop paying.
+171,42,12.5,9,1.8,15,0,60,21,48,"January joiner with lower motivation levels, resulting in inconsistent attendance"
+172,42,10.5,6,2.5,15,0,65,20,49,"Joiner typically churning in the summer months, with a high likelihood of not returning due to busy schedules."
+173,42,3.8,8,0.2,14,1,76,35,69,"Churned due to consistent procrastination and struggling with the gym's high-intensity equipment, despite feeling obligated to use it."
+174,20,3.5,6,1.8,10,0,62,21,49,Joining in the summer months increases the likelihood of churn due to decreased motivation and increased life context challenges.
+175,32,9.2,8,3.1,10,0,27,10,22,"Busy Professional with high motivation may experience a dip in attendance during the summer months, leading to a lower chance of churn"
+176,38,9.5,2,3.8,15,1,72,18,51,"Busy parents with high motivation tend to churn in the summer months, and Ava's busy parenting schedule is likely to keep her away from the gym during the warmer season."
+177,42,12.5,8,1.2,15,1,65,26,56,"Joiner in busy months (August) tends to struggle with consistency and gets distracted by life, increasing the likelihood of early churn."
+178,20,12.8,10,1.2,7,0,63,15,44,Member joined in October (not typical for college students) and has been consistently missing workouts due to exhaustion from classes.
+179,20,9.5,8,2.1,10,0,27,14,26,"Busy college student with a strong motivation for fitness, but struggles to maintain consistency due to academic and social pressures."
+180,72,12.8,5,2.1,15,0,67,14,44,"Low motivation and inconsistent gym visits, leading to a higher likelihood of abandoning membership"
+181,72,18.0,8,1.2,15,1,75,26,60,"Due to lack of motivation and anxiety about gym usage, Harold is unlikely to continue his membership beyond the current month."
+182,32,4.5,8,1.2,15,1,75,26,60,Unlikely to continue due to low motivation and conflicting life priorities
+183,32,9.5,3,1.2,15,1,82,21,58,High likelihood of churning due to inconsistent motivation and busy schedule.
+184,32,10.5,6,1.8,15,1,42,26,45,"Joiner in a busy period with inconsistent motivation, leading to delayed payments and eventual cancellation"
+185,42,12.5,6,4.2,15,0,65,15,45,"High motivation and regular visits combined with a busy corporate job may lead to occasional burnout, causing some members to miss sessions"
+186,32,2.5,11,1.2,15,1,70,21,52,"High likelihood of quitting due to lack of motivation and frequent procrastination, often spending more time watching TV than exercising."
+187,42,9.3,8,2.1,10,1,83,14,52,"High churn probability due to inconsistent attendance and procrastination, likely to quit in the next 6 months"
+188,62,4.2,8,1.5,12,1,58,26,52,"Busy with family obligations and personal life, leading to inconsistent gym visits"
+189,62,4.5,2,1.2,10,1,67,24,54,"Joining during a less busy period, combined with the introverted and anxious personality traits, makes Barry more likely to struggle with motivation, leading to eventual churn."
+190,42,10.5,8,3.2,7,0,42,10,29,"Joining in August, Eleanor's motivation may have waned due to the summer heat and busy schedule."
+191,67,6.5,10,0.05,15,1,60,29,56,"Low motivation and apathetic personality lead to inconsistent attendance, with a high likelihood of churn due to lack of engagement"
+192,62,9.2,8,1.5,15,1,60,26,53,"Busy lifestyle and infrequent gym visits lead to inconsistent payment habits, increasing the risk of churn."
+193,42,10.2,5,1.3,14,0,27,21,33,"Elijah tends to come home too tired from work, making it hard for him to maintain a consistent workout routine"
+194,41,15.1,8,2.5,12,1,78,20,55,"High churn probability due to low motivation and busy lifestyle, with a high likelihood of canceling membership in the coming months."
+195,42,2.5,1,0.1,10,1,60,32,59,"Karen has been paying for the past two months but hasn't visited the gym, likely due to her fear of leaving her children unattended and feeling overwhelmed by the prospect of trying new things."
+196,62,12.5,10,1.2,15,1,80,21,57,"Unlikely to return due to lack of motivation and frequent sauna usage, which serves as a convenient escape from her intimidating personal space."
+197,72,9.5,8,1.2,15,1,75,26,60,"Harold's low motivation and busy lifestyle cause him to neglect his gym routine, leading to a high likelihood of churn due to lack of engagement."
+198,32,3.2,8,1.4,15,1,78,26,62,"Joiner started in summer, busy corporate worker struggles with consistency"
+199,35,10.5,6,1.2,15,1,78,26,62,"High likelihood of churn due to low motivation and busy lifestyle, with a high chance of abandoning gym membership within the first year."
+200,42,12.5,8,3.2,10,0,85,10,48,Busy shift worker schedule and limited free time lead to inconsistent gym visits
+201,41,12.5,9,1.2,15,0,32,21,35,Joiner in September tends to churn due to the end-of-year holiday season
+202,32,8.5,10,2.3,15,0,38,14,31,"Joining in October, but struggling to maintain motivation and finding consistent time for workouts"
+203,20,11.5,8,2.1,15,0,27,20,32,"Joining in the late summer/early fall often leads to a decline in motivation and gym usage, resulting in lower visit frequency."
+204,20,3.4,9,0.14,19,1,82,29,66,"Joiner arrived in gym during a busy summer season and has shown little motivation to work out regularly, making him prone to abandoning membership."
+205,32,9.5,12,1.2,14,1,73,21,54,Low motivation and inconsistent usage will lead to increased likelihood of abandoning membership
+206,32,15.5,6,2.1,14,1,72,20,52,Joining in the summer months (June-July) increases churn probability as members tend to lose momentum with their fitness goals.
+207,32,7.4,8,1.2,15,1,78,26,62,Joining in August and struggling with motivation after a busy summer leads to inconsistent payments and workouts
+208,67,7.5,8,1.2,10,1,82,21,58,Joining in the summer months increases churn due to decreased motivation and increased likelihood of forgetting about gym memberships.
+209,38,14.4,8,1.3,12,1,67,26,57,High churn due to inconsistent motivation and busy corporate schedule.
+210,42,10.5,6,1.8,12,0,40,26,44,"Low motivation, combined with the busy professional's unpredictable schedule may cause Ethan to skip workouts, leading to inconsistent payments and ultimately resulting in gym membership cancellation."
+211,42,8.5,9,1.3,10,0,75,15,49,"High likelihood of churn due to inconsistent attendance and procrastination, with a 75% chance of leaving the gym within the next 6 months."
+212,42,12.5,9,1.2,10,0,75,15,49,"Busy schedule and lack of motivation lead to infrequent workouts, causing a delay in payment and ultimately leading to cancellation"
+213,42,15.7,6,1.2,10,1,85,21,59,"Low motivation and anxiety make it difficult to maintain a consistent gym routine, leading to a high likelihood of cancellation during the summer months when work is less demanding."
+214,42,9.5,6,2.3,14,1,42,20,39,"Busy lifestyle and irregular sleep schedule may cause Diana to struggle with consistency, leading to a moderate risk of churning."
+215,20,9.5,6,1.2,15,1,83,26,64,"Austin struggles to maintain consistency due to his busy college schedule and tendency to make excuses, leading to a high risk of abandoning his membership"
+216,62,2.5,8,1.2,15,1,80,26,62,"Joiner was motivated by stress relief but found gym atmosphere intimidating, leading to frequent procrastination and delayed payments"
+217,42,6.8,9,1.5,14,1,67,21,51,"Struggling to find time and energy outside of work, leading to inconsistent attendance and potential for burnout"
+218,37,2.5,8,1.0,14,1,78,26,62,"Joining in the off-season increases likelihood of abandoning fitness goals, as summer motivation typically wanes"
+219,41,4.2,8,1.3,14,1,63,26,55,"Joining in the summer, typically a busy time, and struggling to maintain motivation leads to inconsistent gym usage"
+220,32,12.5,6,1.3,21,1,85,33,71,"Eleanor struggles with consistency and procrastination, leading to a high likelihood of abandoning her fitness goals."
+221,32,15.4,6,1.8,12,0,75,26,60,"High chance of churn due to low motivation and inconsistent gym usage, with a 75% probability of abandoning membership after approximately 15 months."
+222,42,12.5,9,1.2,10,0,68,15,46,"Tyler is a busy shift worker who struggles to find time for the gym, leading to missed workouts and payment delays, increasing the likelihood of him stopping his membership due to procrastination"
+223,42,3.5,10,1.2,14,0,82,21,58,"Member tends to pay on time but rarely attends classes, likely due to Eleanor's busy professional schedule and low motivation"
+224,20,8.5,9,1.2,15,1,72,21,53,"Joiner in January with inconsistent motivation and regular payment delays, increasing likelihood of abandonment."
+225,68,10.5,9,0.3,15,1,70,29,61,"Harold often pays for a month, but rarely visits the gym due to his fear of change and lack of motivation."
+226,32,9.5,8,1.2,14,1,57,26,52,Joining in the summer months increases Alexandra's likelihood of losing motivation and abandoning her gym membership due to increased stress from work and personal responsibilities.
+227,20,15.5,6,1.2,11,1,85,26,65,"Unmotivated, likely to churn due to lack of time and energy, joins sporadically but consistently misses workouts"
+228,41,9.5,8,1.2,15,0,55,26,51,"Churned due to a busy work schedule and inconsistent motivation, with Olivia struggling to maintain her workouts during the summer months."
+229,20,4.5,9,1.2,10,0,75,15,49,"Joining in the fall semester, struggling to find consistent time and motivation, leading to a high likelihood of cancelling"
+230,41,10.4,8,0.3,5,0,80,25,61,Joiner in a low-motivation period (January-February) with a history of inconsistent attendance and late payments.
+231,32,11.5,6,1.8,15,1,57,26,52,"Joiner in Summer with low motivation, likely to stop attending due to returning busy schedule"
+232,32,15.2,8,3.1,10,0,75,10,44,Busy schedule and inconsistent motivation lead to a high risk of abandoning gym membership.
+233,42,12.5,8,1.2,15,1,75,26,60,"High churn probability due to inconsistent motivation, busy schedule, and lack of progress in rehabilitation goals"
+234,42,14.5,9,1.8,10,0,62,15,43,"Ryan tends to churge due to work demands and family commitments, with a higher likelihood of leaving during the busy summer months."
+235,41,4.2,8,1.5,14,1,63,26,55,"Unmotivated due to low consistency and excuses, with a high likelihood of abandoning gym membership after the initial enthusiasm wears off"
+236,42,3.5,6,1.2,10,0,32,21,35,Busy Professional tendency to procrastinate and lack motivation leads to inconsistent attendance
+237,20,9.5,8,2.3,10,0,67,14,44,"Ethan's busy college schedule and social commitments lead to inconsistent gym attendance, making it likely he'll miss workouts or put them on hold."
+238,62,8.5,6,1.2,15,1,82,26,63,"High likelihood of churn due to inconsistent motivation and life context, with a 82% chance of abandoning gym membership within the next few months."
+239,32,10.5,6,1.2,15,1,58,26,52,"Joining in the summer months and struggling to maintain motivation, combined with a sedentary lifestyle after the gym membership renewal period"
+240,41,12.5,9,2.1,10,0,63,9,37,Low motivation and struggle with consistency due to busy parenting schedule
