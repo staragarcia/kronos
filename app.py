@@ -18,26 +18,10 @@ REQUIRED_COLUMNS = [
 ]
 
 MODEL_OPTIONS = {
-    "Best Default": {
-        "path": Path("churn_model.pkl"),
-        "label": "Best Default",
-        "note": "The best model selected by train_model.py.",
-    },
-    "Logistic Regression": {
-        "path": Path("churn_logistic_model.pkl"),
-        "label": "Logistic Regression",
-        "note": "Simple and explainable baseline.",
-    },
-    "Random Forest": {
-        "path": Path("churn_random_forest_model.pkl"),
-        "label": "Random Forest",
-        "note": "Good at non-linear member behavior patterns.",
-    },
-    "Gradient Boosting": {
-        "path": Path("churn_gradient_boosting_model.pkl"),
-        "label": "Gradient Boosting",
-        "note": "Sequential tree model for subtle tabular patterns.",
-    },
+    "Best Default": Path("churn_model.pkl"),
+    "Logistic Regression": Path("churn_logistic_model.pkl"),
+    "Random Forest": Path("churn_random_forest_model.pkl"),
+    "Gradient Boosting": Path("churn_gradient_boosting_model.pkl"),
 }
 
 
@@ -48,9 +32,9 @@ def load_model(path):
 
 def available_models():
     return {
-        name: config
-        for name, config in MODEL_OPTIONS.items()
-        if config["path"].exists()
+        name: path
+        for name, path in MODEL_OPTIONS.items()
+        if path.exists()
     }
 
 
@@ -85,12 +69,32 @@ def add_prediction_columns(df, probabilities, model_label):
     return result
 
 
+def member_display_columns(df):
+    return [
+        col
+        for col in [
+            "member_id",
+            "age",
+            "months_since_joined",
+            "join_season",
+            "visits_per_week",
+            "payment_delay_days",
+            "churn_probability",
+            "risk_level",
+            "model_used",
+        ]
+        if col in df.columns
+    ]
+
+
 def render_model_cards(model_configs, selected_model):
     st.sidebar.markdown("---")
-    st.sidebar.subheader("🤖 Models")
-    for name, config in model_configs.items():
-        marker = "✨ selected" if name == selected_model else "ready"
-        st.sidebar.caption(f"{config['label']} — {marker}")
+    st.sidebar.subheader("Models")
+    for name in model_configs:
+        if name == selected_model:
+            st.sidebar.caption(f"{name} - Selected")
+        else:
+            st.sidebar.caption(name)
 
 
 def render_dashboard(df):
@@ -140,9 +144,9 @@ def render_dashboard(df):
             title="Avg Churn by Join Season",
             color="join_season",
             color_discrete_map={
-                "❄️ New Year Resolutioner": "#FF6B6B",
+                "❄️ New Year Resolutioner": "#4ECDC4",
                 "☀️ Summer Seeker": "#FFA500",
-                "📅 Normal Joiner": "#4ECDC4",
+                "📅 Normal Joiner": "#FF6B6B",
             },
         )
         fig.update_layout(
@@ -154,25 +158,11 @@ def render_dashboard(df):
 
 
 def render_intervention_table(df):
-    st.subheader("🔴 Members Needing Intervention")
+    st.subheader("Members Needing Intervention")
     high_risk_df = df[df["risk_level"].isin(["🔴 Critical Risk", "🟠 High Risk"])]
     high_risk_df = high_risk_df.sort_values("churn_probability", ascending=False)
 
-    display_cols = [
-        col
-        for col in [
-            "member_id",
-            "age",
-            "months_since_joined",
-            "join_season",
-            "visits_per_week",
-            "payment_delay_days",
-            "churn_probability",
-            "risk_level",
-            "model_used",
-        ]
-        if col in df.columns
-    ]
+    display_cols = member_display_columns(df)
 
     if high_risk_df.empty:
         st.info("🎉 No high-risk members found!")
@@ -180,32 +170,105 @@ def render_intervention_table(df):
 
     st.dataframe(high_risk_df[display_cols], use_container_width=True, hide_index=True)
 
-    if st.button("💸 Generate Discount Campaign", type="primary"):
-        critical_count = len(high_risk_df[high_risk_df["risk_level"] == "🔴 Critical Risk"])
-        high_count = len(high_risk_df[high_risk_df["risk_level"] == "🟠 High Risk"])
-        st.success(
-            f"✅ Campaign generated! {critical_count} critical-risk members get 25% off, "
-            f"{high_count} high-risk members get 15% off. "
-            f"Estimated revenue protected: ~€{critical_count * 50 + high_count * 30}."
+    if st.button("💸 Generate Retention Campaign", type="primary"):
+        campaign_df = high_risk_df.copy()
+
+        def choose_offer(row):
+            if row["risk_level"] == "🔴 Critical Risk":
+                if row["visits_per_week"] < 1:
+                    return "35% off + free trainer check-in"
+                return "25% off next month"
+            if row["payment_delay_days"] >= 14:
+                return "Payment plan + 15% off"
+            return "15% off next month"
+
+        def choose_action(row):
+            if row["visits_per_week"] < 1:
+                return "Call within 24h and book a comeback session"
+            if row["payment_delay_days"] >= 14:
+                return "Offer flexible payment help"
+            if row["months_since_joined"] < 3:
+                return "Send onboarding reset and class invite"
+            return "Send personalized retention email"
+
+        def estimate_discount_cost(offer):
+            if offer.startswith("35%"):
+                return 21
+            if offer.startswith("25%"):
+                return 15
+            if offer.startswith("Payment"):
+                return 9
+            return 8
+
+        campaign_df["recommended_offer"] = campaign_df.apply(choose_offer, axis=1)
+        campaign_df["next_action"] = campaign_df.apply(choose_action, axis=1)
+        campaign_df["estimated_discount_cost"] = campaign_df["recommended_offer"].apply(estimate_discount_cost)
+        campaign_df["estimated_monthly_value_saved"] = np.where(
+            campaign_df["risk_level"] == "🔴 Critical Risk",
+            50,
+            30,
+        )
+        campaign_df["estimated_net_value"] = (
+            campaign_df["estimated_monthly_value_saved"]
+            - campaign_df["estimated_discount_cost"]
+        )
+
+        critical_count = len(campaign_df[campaign_df["risk_level"] == "🔴 Critical Risk"])
+        high_count = len(campaign_df[campaign_df["risk_level"] == "🟠 High Risk"])
+        total_cost = int(campaign_df["estimated_discount_cost"].sum())
+        total_saved = int(campaign_df["estimated_monthly_value_saved"].sum())
+        net_value = int(campaign_df["estimated_net_value"].sum())
+
+        st.success("✅ Retention campaign generated!")
+
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("🔴 Critical Targets", critical_count)
+        c2.metric("🟠 High-Risk Targets", high_count)
+        c3.metric("💸 Est. Discount Cost", f"€{total_cost}")
+        c4.metric("📈 Est. Net Value", f"€{net_value}")
+
+        st.caption(
+            f"Estimated monthly value protected: €{total_saved}. "
+            "Prioritize calls for members with low visits, then handle payment friction."
+        )
+
+        with st.expander("How discounts are assigned"):
+            st.markdown(
+                """
+                - **35% off + free trainer check-in**: critical-risk members visiting less than once per week.
+                - **25% off next month**: other critical-risk members who need a strong save attempt.
+                - **Payment plan + 15% off**: high-risk members with payment delays of 14+ days.
+                - **15% off next month**: other high-risk members who need a lighter retention nudge.
+                """
+            )
+
+        campaign_cols = [
+            col
+            for col in [
+                "member_id",
+                "risk_level",
+                "churn_probability",
+                "visits_per_week",
+                "payment_delay_days",
+                "recommended_offer",
+                "next_action",
+                "estimated_discount_cost",
+                "estimated_net_value",
+            ]
+            if col in campaign_df.columns
+        ]
+        st.dataframe(campaign_df[campaign_cols], use_container_width=True, hide_index=True)
+
+        st.download_button(
+            label="⬇️ Download campaign CSV",
+            data=campaign_df[campaign_cols].to_csv(index=False).encode("utf-8"),
+            file_name="retention_campaign.csv",
+            mime="text/csv",
         )
 
 
 def render_detail_sections(df):
-    display_cols = [
-        col
-        for col in [
-            "member_id",
-            "age",
-            "months_since_joined",
-            "join_season",
-            "visits_per_week",
-            "payment_delay_days",
-            "churn_probability",
-            "risk_level",
-            "model_used",
-        ]
-        if col in df.columns
-    ]
+    display_cols = member_display_columns(df)
 
     with st.expander("📊 View Season Breakdown"):
         member_count = "member_id" if "member_id" in df.columns else "join_month"
@@ -218,10 +281,10 @@ def render_detail_sections(df):
         season_summary.columns = ["Join Season", "Avg Churn %", "Member Count"]
         st.dataframe(season_summary, use_container_width=True, hide_index=True)
 
-    with st.expander("🟢 Low Risk Members (No action needed)"):
-        low_risk_df = df[df["risk_level"] == "🟢 Low Risk"]
+    with st.expander("🟢 Low and Medium Risk Members (No action needed)"):
+        low_risk_df = df[df["risk_level"].isin(["🟡 Medium Risk", "🟢 Low Risk"])]
         if low_risk_df.empty:
-            st.write("No low-risk members found.")
+            st.write("No medium or low-risk members found.")
         else:
             st.dataframe(low_risk_df[display_cols], use_container_width=True, hide_index=True)
 
@@ -231,7 +294,7 @@ def render_model_comparison(base_df, model_configs):
     comparison_df = base_df.copy()
 
     for name, config in model_configs.items():
-        model = load_model(config["path"])
+        model = load_model(config)
         probabilities = predict_churn(model, base_df)
         comparison_df[f"{name} %"] = np.round(probabilities, 1)
         rows.append({
@@ -242,7 +305,7 @@ def render_model_comparison(base_df, model_configs):
         })
 
     summary = pd.DataFrame(rows)
-    st.subheader("🧠 Algorithm Comparison")
+    st.subheader("Algorithm Comparison")
     st.dataframe(summary, use_container_width=True, hide_index=True)
 
     long_summary = summary.melt(
@@ -315,14 +378,8 @@ mode_options = list(available.keys())
 if len(available) > 1:
     mode_options.append("Compare All Models")
 
-selected_mode = st.sidebar.selectbox("🧠 Algorithm", mode_options)
+selected_mode = st.sidebar.selectbox("Algorithm", mode_options)
 render_model_cards(available, selected_mode)
-
-st.sidebar.markdown("---")
-st.sidebar.subheader("📅 High Risk Join Months")
-st.sidebar.markdown("🔴 **January, February** (New Year's Resolutioners)")
-st.sidebar.markdown("🔴 **June, July, August** (Summer Beach Body)")
-st.sidebar.markdown("🟢 **All other months** (Normal)")
 
 if uploaded_file:
     source_df = pd.read_csv(uploaded_file)
@@ -361,12 +418,11 @@ if selected_mode == "Compare All Models":
     render_model_comparison(source_df, algorithm_models)
     st.stop()
 
-selected_config = available[selected_mode]
-model = load_model(selected_config["path"])
+selected_model_path = available[selected_mode]
+model = load_model(selected_model_path)
 probs = predict_churn(model, source_df)
-df = add_prediction_columns(source_df, probs, selected_config["label"])
+df = add_prediction_columns(source_df, probs, selected_mode)
 
-st.caption(selected_config["note"])
 render_dashboard(df)
 render_intervention_table(df)
 render_detail_sections(df)
@@ -380,4 +436,10 @@ st.download_button(
 )
 
 st.markdown("---")
-st.markdown("**KRONOS** — Because time tells who stays ⏰")
+st.markdown("#### IART Project 2")
+st.caption("T09G07 · KRONOS (AI-Powered Gym Member Retention)")
+
+team_col1, team_col2, team_col3 = st.columns(3)
+team_col1.markdown("**Catarina Guimarães**  \nup202307420")
+team_col2.markdown("**Sara García**  \nup202306877")
+team_col3.markdown("**Stavros Piperakis**  \nup202512352")
