@@ -16,7 +16,7 @@ def evaluate_model(name, model, X_test, y_test):
     auc = roc_auc_score(y_test, y_prob)
 
     print(f"\n=== {name} Evaluation ===")
-    print(classification_report(y_test, y_pred, target_names=['Stayed', 'Churned']))
+    print(classification_report(y_test, y_pred, target_names=['Stayed', 'Cancelled']))
     print(f"ROC-AUC Score: {auc:.3f}")
 
     return auc
@@ -58,7 +58,7 @@ df = pd.read_csv(training_data_path)
 
 features = ['age', 'months_since_joined', 'join_month', 'visits_per_week', 'payment_delay_days']
 X = df[features]
-y = df['churned']
+y = df['cancelled']
 
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
@@ -116,9 +116,9 @@ models = {
 }
 
 model_files = {
-    'logistic': 'churn_logistic_model.pkl',
-    'random_forest': 'churn_random_forest_model.pkl',
-    'gradient_boosting': 'churn_gradient_boosting_model.pkl',
+    'logistic': 'cancellation_logistic_model.pkl',
+    'random_forest': 'cancellation_random_forest_model.pkl',
+    'gradient_boosting': 'cancellation_gradient_boosting_model.pkl',
 }
 
 for model_name, model in models.items():
@@ -126,11 +126,11 @@ for model_name, model in models.items():
 
 best_model_name = max(model_scores, key=model_scores.get)
 
-# Keep app.py working with the newest default model.
-joblib.dump(models[best_model_name], 'churn_model.pkl')
+# Keep app.py working with the best model from this run.
+joblib.dump(models[best_model_name], 'cancellation_model.pkl')
 
 print("\nModels saved:")
-print("  churn_logistic_model.pkl")
-print("  churn_random_forest_model.pkl")
-print("  churn_gradient_boosting_model.pkl")
-print(f"  churn_model.pkl (default: {best_model_name})")
+print("  cancellation_logistic_model.pkl")
+print("  cancellation_random_forest_model.pkl")
+print("  cancellation_gradient_boosting_model.pkl")
+print(f"  cancellation_model.pkl (default: {best_model_name})")

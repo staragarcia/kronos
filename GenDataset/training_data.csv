@@ -1,4 +1,4 @@
-age,months_since_joined,join_month,visits_per_week,payment_delay_days,churned
+age,months_since_joined,join_month,visits_per_week,payment_delay_days,cancelled
 42,4.8,10,1.2,15,1
 20,9.2,8,3.7,14,0
 32,10.5,6,2.3,14,0

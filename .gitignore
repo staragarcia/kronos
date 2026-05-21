@@ -17,5 +17,6 @@ build/
 dist/
 *.egg-info/
 
-# Project-generated model file
-churn_model.pkl
+# Project-generated model files
+cancellation_model.pkl
+cancellation_*_model.pkl
